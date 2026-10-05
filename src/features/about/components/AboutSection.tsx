@@ -8,7 +8,7 @@ export function AboutSection() {
   const t = useTranslations("about");
 
   return (
-    <section id="about" className="py-24 bg-white relative">
+    <section id="about" className="py-24 bg-surface relative">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -24,7 +24,7 @@ export function AboutSection() {
               subtitle={t("subtitle")}
             />
             
-            <div className="text-navy-700/80 space-y-6 text-lg leading-relaxed mb-10">
+            <div className="text-foreground-muted/80 space-y-6 text-lg leading-relaxed mb-10">
               <p>
                 {t("mission")}
               </p>
@@ -35,7 +35,7 @@ export function AboutSection() {
             
             <a 
               href="#facilities" 
-              className="inline-flex items-center font-semibold text-blue-600 hover:text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded px-1"
+              className="inline-flex items-center font-semibold text-primary hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-1"
             >
               {t("discoverFacilities")}
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
@@ -55,13 +55,13 @@ export function AboutSection() {
               return (
                 <div 
                   key={value.key}
-                  className="bg-sky-50 rounded-2xl p-6 border border-sky-100 hover:border-sky-200 transition-colors shadow-sm"
+                  className="bg-surface-accent rounded-2xl p-6 border border-border-accent hover:border-accent-muted transition-colors shadow-sm"
                 >
-                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6">
-                    <Icon className="h-6 w-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-surface rounded-xl shadow-sm flex items-center justify-center mb-6">
+                    <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-navy-800 mb-3">{t(`values.${value.key}.title`)}</h3>
-                  <p className="text-navy-700/70 leading-relaxed text-sm">
+                  <h3 className="text-xl font-bold text-foreground mb-3">{t(`values.${value.key}.title`)}</h3>
+                  <p className="text-foreground-muted/70 leading-relaxed text-sm">
                     {t(`values.${value.key}.description`)}
                   </p>
                 </div>

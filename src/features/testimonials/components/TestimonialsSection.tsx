@@ -7,7 +7,7 @@ export function TestimonialsSection() {
   const t = useTranslations("testimonials");
 
   return (
-    <section id="testimonials" className="py-24 bg-white">
+    <section id="testimonials" className="py-24 bg-surface">
       <div className="container mx-auto px-4 md:px-8">
         <SectionHeading 
           title={t("title")}

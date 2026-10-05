@@ -3,26 +3,26 @@ import type { FacilityItem } from "./types";
 export const FACILITIES_DATA: FacilityItem[] = [
   { 
     key: "privateRooms",
-    gradient: "from-blue-400 to-sky-300", 
+    gradientKey: "privateRooms",
   },
   { 
     key: "therapeuticGarden",
-    gradient: "from-emerald-400 to-teal-300", 
+    gradientKey: "therapeuticGarden",
   },
   { 
     key: "livingRoom",
-    gradient: "from-blue-500 to-indigo-400", 
+    gradientKey: "livingRoom",
   },
   { 
     key: "diningHall",
-    gradient: "from-amber-400 to-orange-300", 
+    gradientKey: "diningHall",
   },
   { 
     key: "physiotherapyRoom",
-    gradient: "from-cyan-400 to-blue-300", 
+    gradientKey: "physiotherapyRoom",
   },
   { 
     key: "recreationArea",
-    gradient: "from-purple-400 to-pink-300", 
+    gradientKey: "recreationArea",
   },
 ];

@@ -32,7 +32,7 @@ export default async function RootLayout({
       </head>
       <body className="antialiased min-h-screen flex flex-col">
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 z-[100] rounded-md font-bold">
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-foreground-inverse px-4 py-2 z-[100] rounded-md font-bold">
             {t("skipToMainContent")}
           </a>
           <Navbar />

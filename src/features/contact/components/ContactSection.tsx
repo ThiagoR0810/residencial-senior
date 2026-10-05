@@ -90,7 +90,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-sky-50">
+    <section id="contact" className="py-24 bg-surface-accent">
       <div className="container mx-auto px-4 md:px-8">
         <SectionHeading 
           title={contactT("title")}
@@ -100,67 +100,67 @@ export function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16 max-w-6xl mx-auto">
           {/* Contact Information */}
-          <div className="bg-navy-900 rounded-3xl p-8 md:p-12 text-white shadow-xl">
-            <h3 className="text-2xl font-bold mb-8 text-sky-100">{contactT("getInTouch")}</h3>
+          <div className="bg-brand-dark rounded-3xl p-8 md:p-12 text-foreground-inverse shadow-xl">
+            <h3 className="text-2xl font-bold mb-8 text-foreground-on-dark">{contactT("getInTouch")}</h3>
             
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <div className="bg-blue-600/20 p-3 rounded-lg">
-                  <MapPin className="h-6 w-6 text-sky-300" />
+                <div className="bg-primary/20 p-3 rounded-lg">
+                  <MapPin className="h-6 w-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-sky-100 mb-1">{contactT("visitUs")}</h4>
-                  <p className="text-sky-100/70 leading-relaxed">{SITE_CONFIG.address}</p>
+                  <h4 className="font-semibold text-lg text-foreground-on-dark mb-1">{contactT("visitUs")}</h4>
+                  <p className="text-foreground-on-dark/70 leading-relaxed">{SITE_CONFIG.address}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-blue-600/20 p-3 rounded-lg">
-                  <Phone className="h-6 w-6 text-sky-300" />
+                <div className="bg-primary/20 p-3 rounded-lg">
+                  <Phone className="h-6 w-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-sky-100 mb-1">{contactT("callUs")}</h4>
-                  <p className="text-sky-100/70">{SITE_CONFIG.phone}</p>
+                  <h4 className="font-semibold text-lg text-foreground-on-dark mb-1">{contactT("callUs")}</h4>
+                  <p className="text-foreground-on-dark/70">{SITE_CONFIG.phone}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-blue-600/20 p-3 rounded-lg">
-                  <Mail className="h-6 w-6 text-sky-300" />
+                <div className="bg-primary/20 p-3 rounded-lg">
+                  <Mail className="h-6 w-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-sky-100 mb-1">{contactT("emailUs")}</h4>
-                  <p className="text-sky-100/70">{SITE_CONFIG.email}</p>
+                  <h4 className="font-semibold text-lg text-foreground-on-dark mb-1">{contactT("emailUs")}</h4>
+                  <p className="text-foreground-on-dark/70">{SITE_CONFIG.email}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-blue-600/20 p-3 rounded-lg">
-                  <Clock className="h-6 w-6 text-sky-300" />
+                <div className="bg-primary/20 p-3 rounded-lg">
+                  <Clock className="h-6 w-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-sky-100 mb-1">{contactT("workingHours")}</h4>
-                  <p className="text-sky-100/70">{t("site.workingHours")}</p>
+                  <h4 className="font-semibold text-lg text-foreground-on-dark mb-1">{contactT("workingHours")}</h4>
+                  <p className="text-foreground-on-dark/70">{t("site.workingHours")}</p>
                 </div>
               </div>
             </div>
             
             {/* Map Placeholder */}
-            <div className="mt-12 h-48 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center">
-              <span className="text-sky-100/40 font-medium">{contactT("mapPlaceholder")}</span>
+            <div className="mt-12 h-48 bg-foreground-inverse/5 rounded-xl border border-foreground-inverse/10 flex items-center justify-center">
+              <span className="text-foreground-on-dark/40 font-medium">{contactT("mapPlaceholder")}</span>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
-            <h3 className="text-2xl font-bold mb-8 text-navy-800">{contactT("sendMessage")}</h3>
+          <div className="bg-surface rounded-3xl p-8 md:p-12 shadow-sm border border-border">
+            <h3 className="text-2xl font-bold mb-8 text-foreground">{contactT("sendMessage")}</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Honeypot Field */}
               <input type="text" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" onChange={handleChange} value={formData.botcheck} />
               
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-navy-700 mb-2">{contactT("form.fullName")}</label>
+                <label htmlFor="name" className="block text-sm font-medium text-foreground-muted mb-2">{contactT("form.fullName")}</label>
                 <input 
                   type="text" 
                   id="name" 
@@ -168,14 +168,14 @@ export function ContactSection() {
                   required 
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
+                  className="w-full px-4 py-3 rounded-xl border border-border-muted focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-input focus:bg-surface"
                   placeholder={contactT("form.fullNamePlaceholder")}
                 />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-navy-700 mb-2">{contactT("form.email")}</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground-muted mb-2">{contactT("form.email")}</label>
                   <input 
                     type="email" 
                     id="email" 
@@ -183,12 +183,12 @@ export function ContactSection() {
                     required 
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-border-muted focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-input focus:bg-surface"
                     placeholder={contactT("form.emailPlaceholder")}
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-navy-700 mb-2">{contactT("form.phone")}</label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-foreground-muted mb-2">{contactT("form.phone")}</label>
                   <input 
                     type="tel" 
                     id="phone" 
@@ -196,14 +196,14 @@ export function ContactSection() {
                     required 
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-border-muted focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-input focus:bg-surface"
                     placeholder={contactT("form.phonePlaceholder")}
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-navy-700 mb-2">{contactT("form.message")}</label>
+                <label htmlFor="message" className="block text-sm font-medium text-foreground-muted mb-2">{contactT("form.message")}</label>
                 <textarea 
                   id="message" 
                   name="message" 
@@ -211,19 +211,19 @@ export function ContactSection() {
                   required 
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-border-muted focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-input focus:bg-surface resize-none"
                   placeholder={contactT("form.messagePlaceholder")}
                 ></textarea>
               </div>
 
               {status === "error" && (
-                <div className="p-4 bg-red-50 text-red-600 rounded-xl text-sm font-medium">
+                <div className="p-4 bg-danger-surface text-danger rounded-xl text-sm font-medium">
                   {errorMessage}
                 </div>
               )}
 
               {status === "success" && (
-                <div className="p-4 bg-green-50 text-green-600 rounded-xl text-sm font-medium">
+                <div className="p-4 bg-success-surface text-success rounded-xl text-sm font-medium">
                   {contactT("form.success")}
                 </div>
               )}
@@ -231,7 +231,7 @@ export function ContactSection() {
               <button 
                 type="submit" 
                 disabled={status === "loading" || status === "success"}
-                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-300"
+                className="w-full bg-primary hover:bg-primary-hover disabled:bg-disabled text-foreground-inverse font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent"
               >
                 {status === "loading" ? contactT("form.sending") : (
                   <>

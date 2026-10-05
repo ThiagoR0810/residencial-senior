@@ -2,5 +2,5 @@ export type FacilityKey = "privateRooms" | "therapeuticGarden" | "livingRoom" | 
 
 export interface FacilityItem {
   key: FacilityKey;
-  gradient: string;
+  gradientKey: FacilityKey;
 }

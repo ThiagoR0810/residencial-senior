@@ -7,7 +7,7 @@ export function ServicesSection() {
   const t = useTranslations("services");
 
   return (
-    <section id="services" className="py-24 bg-offwhite">
+    <section id="services" className="py-24 bg-surface-muted">
       <div className="container mx-auto px-4 md:px-8">
         <SectionHeading 
           title={t("title")}
