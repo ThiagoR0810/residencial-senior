@@ -3,6 +3,7 @@ import "./globals.css";
 import { SITE_CONFIG } from "@/shared/config/siteConfig";
 import { Navbar } from "@/features/navigation";
 import { Footer } from "@/features/footer";
+import { WhatsAppFAB } from "@/shared/ui/WhatsAppFAB";
 
 export const metadata: Metadata = {
   title: `${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`,
@@ -27,6 +28,7 @@ export default function RootLayout({
         <main id="main-content" className="flex-1">
           {children}
         </main>
+        <WhatsAppFAB />
         <Footer />
       </body>
     </html>
