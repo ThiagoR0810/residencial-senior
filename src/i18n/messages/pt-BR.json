@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "title": "Residencial Sênior | Cuidado com Amor, Vida com Dignidade",
+    "description": "Uma residência sênior premium dedicada ao cuidado humanizado, ao conforto, à segurança médica e ao bem-estar."
+  },
+  "site": {
+    "name": "Residencial Sênior",
+    "tagline": "Cuidado com Amor, Vida com Dignidade",
+    "description": "Uma residência sênior premium dedicada ao cuidado humanizado, ao conforto, à segurança médica e ao bem-estar.",
+    "whatsappMessage": "Olá! Gostaria de obter mais informações sobre o Residencial Sênior.",
+    "workingHours": "Segunda a sexta: 8h às 18h | Sábado: 9h às 13h"
+  },
+  "navigation": {
+    "home": "Início",
+    "about": "Sobre nós",
+    "services": "Serviços",
+    "facilities": "Estrutura",
+    "testimonials": "Depoimentos",
+    "contact": "Contato",
+    "scheduleVisit": "Agende uma visita",
+    "mainNavigation": "Navegação principal",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu"
+  },
+  "accessibility": {
+    "skipToMainContent": "Ir para o conteúdo principal",
+    "scrollToAbout": "Descer até a seção Sobre nós",
+    "scroll": "Deslize",
+    "contactViaWhatsApp": "Entre em contato pelo WhatsApp",
+    "learnMoreAbout": "Saiba mais sobre {title}"
+  },
+  "hero": {
+    "scheduleVisit": "Agende uma visita",
+    "exploreServices": "Conheça nossos serviços"
+  },
+  "about": {
+    "title": "Uma verdadeira extensão da sua casa",
+    "subtitle": "No Residencial Sênior, acreditamos que envelhecer é um privilégio que deve ser vivido com dignidade, alegria e excelência no cuidado.",
+    "mission": "Nossa missão é oferecer um ambiente onde os idosos não apenas recebam a melhor assistência médica e de enfermagem, mas também encontrem uma comunidade cheia de vida, atividades e propósito.",
+    "team": "Com uma equipe multidisciplinar formada por médicos geriatras, enfermeiros, nutricionistas e fisioterapeutas, garantimos que cada necessidade seja atendida com máxima competência e carinho.",
+    "discoverFacilities": "Conheça nossa estrutura",
+    "values": {
+      "humanization": {
+        "title": "Humanização",
+        "description": "Cada residente recebe cuidado individual, respeito e muito carinho."
+      },
+      "safety": {
+        "title": "Segurança",
+        "description": "Monitoramento 24 horas, arquitetura adaptada e protocolos médicos rigorosos."
+      },
+      "comfort": {
+        "title": "Conforto",
+        "description": "Ambientes acolhedores projetados para oferecer a sensação de estar em casa."
+      },
+      "familyIntegration": {
+        "title": "Integração familiar",
+        "description": "Incentivamos e facilitamos visitas frequentes e a participação da família."
+      }
+    }
+  },
+  "services": {
+    "title": "Serviços completos de cuidado",
+    "subtitle": "Oferecemos uma abordagem integral ao cuidado com idosos, gerenciando cada aspecto da saúde e do bem-estar com excelência.",
+    "items": {
+      "care": {
+        "title": "Assistência 24 horas",
+        "description": "Suporte profissional de enfermagem e assistência médica em tempo integral, garantindo tranquilidade em todos os momentos."
+      },
+      "nutrition": {
+        "title": "Nutrição especializada",
+        "description": "Planos alimentares personalizados por nutricionistas certificados, respeitando as necessidades individuais."
+      },
+      "physiotherapy": {
+        "title": "Fisioterapia",
+        "description": "Programas de reabilitação e mobilidade com terapeutas especializados em nosso centro completo."
+      },
+      "recreation": {
+        "title": "Atividades recreativas",
+        "description": "Arte, música, jardinagem e programas sociais que enriquecem o dia a dia e a saúde cognitiva."
+      }
+    }
+  },
+  "facilities": {
+    "title": "Uma estrutura de excelência",
+    "subtitle": "Projetada para equilibrar segurança médica, acessibilidade e o conforto de casa.",
+    "items": {
+      "privateRooms": {
+        "title": "Quartos privativos",
+        "description": "Quartos totalmente adaptados, com banheiros privativos, botões de chamada de emergência e climatização personalizada."
+      },
+      "therapeuticGarden": {
+        "title": "Jardim terapêutico",
+        "description": "Áreas externas arborizadas para caminhadas seguras, atividades de jardinagem e contato com o ar livre."
+      },
+      "livingRoom": {
+        "title": "Sala de convivência",
+        "description": "Áreas comuns amplas para socialização, leitura e momentos com os visitantes."
+      },
+      "diningHall": {
+        "title": "Sala de refeições",
+        "description": "Ambiente elegante e confortável para apreciar refeições nutritivas preparadas pelo chef."
+      },
+      "physiotherapyRoom": {
+        "title": "Sala de fisioterapia",
+        "description": "Centro de reabilitação moderno, com equipamentos especializados para a mobilidade dos idosos."
+      },
+      "recreationArea": {
+        "title": "Área de recreação",
+        "description": "Espaços dedicados à arteterapia, sessões de cinema e jogos em grupo."
+      }
+    }
+  },
+  "testimonials": {
+    "title": "O que as famílias dizem",
+    "subtitle": "Não acredite apenas em nossas palavras. Conheça as experiências reais de quem confiou seus entes queridos a nós.",
+    "items": {
+      "maria": {
+        "name": "Maria Silva",
+        "relationship": "Filha do residente João",
+        "content": "O cuidado e a atenção que meu pai recebe aqui são extraordinários. Pela primeira vez em anos, posso dormir tranquila sabendo que ele está seguro e feliz.",
+        "initials": "MS"
+      },
+      "carlos": {
+        "name": "Carlos Mendes",
+        "relationship": "Filho da residente Ana",
+        "content": "A estrutura é linda, mas o que realmente se destaca é a equipe. Eles tratam minha mãe com muita dignidade e carinho. É realmente uma segunda casa.",
+        "initials": "CM"
+      },
+      "helena": {
+        "name": "Helena Costa",
+        "relationship": "Esposa do residente Roberto",
+        "content": "A recuperação física do meu marido após o AVC tem sido incrível graças às sessões diárias de fisioterapia. Serei eternamente grata a esta equipe.",
+        "initials": "HC"
+      }
+    }
+  },
+  "contact": {
+    "title": "Estamos aqui para você",
+    "subtitle": "Se você tem dúvidas, quer agendar uma visita ou precisa conversar sobre as opções, nossa equipe está pronta para ajudar.",
+    "getInTouch": "Entre em contato",
+    "visitUs": "Visite-nos",
+    "callUs": "Ligue para nós",
+    "emailUs": "Envie um e-mail",
+    "workingHours": "Horário de atendimento",
+    "mapPlaceholder": "Mapa interativo",
+    "sendMessage": "Envie uma mensagem",
+    "form": {
+      "fullName": "Nome completo *",
+      "fullNamePlaceholder": "João da Silva",
+      "email": "Endereço de e-mail *",
+      "emailPlaceholder": "joao@exemplo.com.br",
+      "phone": "Telefone *",
+      "phonePlaceholder": "+55 (11) 90000-0000",
+      "message": "Sua mensagem *",
+      "messagePlaceholder": "Como podemos ajudar?",
+      "sending": "Enviando...",
+      "send": "Enviar mensagem",
+      "success": "Mensagem enviada com sucesso! Retornaremos em breve."
+    },
+    "errors": {
+      "rateLimit": "Aguarde um momento antes de enviar novamente.",
+      "required": "Preencha todos os campos obrigatórios.",
+      "email": "Insira um endereço de e-mail válido.",
+      "phone": "Insira um número de telefone válido.",
+      "generic": "Algo deu errado. Tente novamente ou ligue diretamente para nós.",
+      "sendFailed": "Não foi possível enviar a mensagem"
+    }
+  },
+  "footer": {
+    "quickLinks": "Links rápidos",
+    "ourServices": "Nossos serviços",
+    "contactUs": "Entre em contato",
+    "address": "Endereço:",
+    "phone": "Telefone:",
+    "email": "E-mail:",
+    "allRightsReserved": "Todos os direitos reservados."
+  }
+}
