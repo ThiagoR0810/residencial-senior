@@ -1,11 +1,44 @@
 @import "tailwindcss";
+@import "../shared/theme/theme.css";
 
-@theme {
-  --color-navy-700: #264a73;
-  --color-navy-800: #1e3a5f;
-  --color-navy-900: #0c1d36;
-  --color-offwhite: #f8fafc;
-  --color-whatsapp: #25d366;
+@theme inline {
+  --color-primary: var(--theme-color-primary);
+  --color-primary-hover: var(--theme-color-primary-hover);
+  --color-primary-soft: var(--theme-color-primary-soft);
+  --color-surface: var(--theme-color-surface);
+  --color-surface-muted: var(--theme-color-surface-muted);
+  --color-surface-accent: var(--theme-color-surface-accent);
+  --color-foreground: var(--theme-color-foreground);
+  --color-foreground-muted: var(--theme-color-foreground-muted);
+  --color-foreground-inverse: var(--theme-color-foreground-inverse);
+  --color-foreground-on-dark: var(--theme-color-foreground-on-dark);
+  --color-accent: var(--theme-color-accent);
+  --color-accent-muted: var(--theme-color-accent-muted);
+  --color-accent-strong: var(--theme-color-accent-strong);
+  --color-border: var(--theme-color-border);
+  --color-border-accent: var(--theme-color-border-accent);
+  --color-border-muted: var(--theme-color-border-muted);
+  --color-input: var(--theme-color-input);
+  --color-focus: var(--theme-color-focus);
+  --color-danger: var(--theme-color-danger);
+  --color-danger-surface: var(--theme-color-danger-surface);
+  --color-success: var(--theme-color-success);
+  --color-success-surface: var(--theme-color-success-surface);
+  --color-disabled: var(--theme-color-disabled);
+  --color-brand-dark: var(--theme-color-brand-dark);
+  --color-whatsapp: var(--theme-color-whatsapp);
+  --color-gradient-private-start: var(--theme-gradient-private-start);
+  --color-gradient-private-end: var(--theme-gradient-private-end);
+  --color-gradient-garden-start: var(--theme-gradient-garden-start);
+  --color-gradient-garden-end: var(--theme-gradient-garden-end);
+  --color-gradient-living-start: var(--theme-gradient-living-start);
+  --color-gradient-living-end: var(--theme-gradient-living-end);
+  --color-gradient-dining-start: var(--theme-gradient-dining-start);
+  --color-gradient-dining-end: var(--theme-gradient-dining-end);
+  --color-gradient-therapy-start: var(--theme-gradient-therapy-start);
+  --color-gradient-therapy-end: var(--theme-gradient-therapy-end);
+  --color-gradient-recreation-start: var(--theme-gradient-recreation-start);
+  --color-gradient-recreation-end: var(--theme-gradient-recreation-end);
   --font-sans: "Inter", "Roboto", ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -14,8 +47,8 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: var(--color-offwhite);
-    color: var(--color-navy-800);
+    background-color: var(--theme-color-surface-muted);
+    color: var(--theme-color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

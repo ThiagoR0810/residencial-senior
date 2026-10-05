@@ -1,0 +1,40 @@
+export const theme = {
+  colors: {
+    primary: "var(--theme-color-primary)",
+    primaryHover: "var(--theme-color-primary-hover)",
+    primarySoft: "var(--theme-color-primary-soft)",
+    surface: "var(--theme-color-surface)",
+    surfaceMuted: "var(--theme-color-surface-muted)",
+    surfaceAccent: "var(--theme-color-surface-accent)",
+    foreground: "var(--theme-color-foreground)",
+    foregroundMuted: "var(--theme-color-foreground-muted)",
+    foregroundInverse: "var(--theme-color-foreground-inverse)",
+    foregroundOnDark: "var(--theme-color-foreground-on-dark)",
+    accent: "var(--theme-color-accent)",
+    accentMuted: "var(--theme-color-accent-muted)",
+    accentStrong: "var(--theme-color-accent-strong)",
+    border: "var(--theme-color-border)",
+    borderAccent: "var(--theme-color-border-accent)",
+    borderMuted: "var(--theme-color-border-muted)",
+    input: "var(--theme-color-input)",
+    focus: "var(--theme-color-focus)",
+    danger: "var(--theme-color-danger)",
+    dangerSurface: "var(--theme-color-danger-surface)",
+    success: "var(--theme-color-success)",
+    successSurface: "var(--theme-color-success-surface)",
+    disabled: "var(--theme-color-disabled)",
+    brandDark: "var(--theme-color-brand-dark)",
+    whatsapp: "var(--theme-color-whatsapp)",
+  },
+  gradients: {
+    privateRooms: "from-gradient-private-start to-gradient-private-end",
+    therapeuticGarden: "from-gradient-garden-start to-gradient-garden-end",
+    livingRoom: "from-gradient-living-start to-gradient-living-end",
+    diningHall: "from-gradient-dining-start to-gradient-dining-end",
+    physiotherapyRoom: "from-gradient-therapy-start to-gradient-therapy-end",
+    recreationArea: "from-gradient-recreation-start to-gradient-recreation-end",
+  },
+} as const;
+
+export type Theme = typeof theme;
+export type ThemeGradient = keyof Theme["gradients"];
