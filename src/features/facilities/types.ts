@@ -1,5 +1,6 @@
+export type FacilityKey = "privateRooms" | "therapeuticGarden" | "livingRoom" | "diningHall" | "physiotherapyRoom" | "recreationArea";
+
 export interface FacilityItem {
-  title: string;
+  key: FacilityKey;
   gradient: string;
-  description: string;
 }

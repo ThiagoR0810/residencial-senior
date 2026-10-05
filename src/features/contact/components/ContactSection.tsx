@@ -1,22 +1,21 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MapPin, Phone, Mail, Send, Clock } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { SectionHeading } from "@/shared/ui/SectionHeading";
 import { SITE_CONFIG } from "@/shared/config/siteConfig";
 import { sanitizeInput, isValidEmail, isValidPhone } from "../utils/validation";
 
 export function ContactSection() {
+  const t = useTranslations();
+  const contactT = useTranslations("contact");
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "", botcheck: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   
   // Anti-bot protection
-  const [formLoadTime, setFormLoadTime] = useState(0);
+  const [formLoadTime] = useState(() => Date.now());
   const [lastSubmitTime, setLastSubmitTime] = useState(0);
-
-  useEffect(() => {
-    setFormLoadTime(Date.now());
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,26 +32,26 @@ export function ContactSection() {
 
     // Rate limiting check (10 seconds between submissions)
     if (Date.now() - lastSubmitTime < 10000) {
-      setErrorMessage("Please wait a moment before submitting again.");
+      setErrorMessage(contactT("errors.rateLimit"));
       setStatus("error");
       return;
     }
 
     // Validation
     if (!formData.name.trim() || !formData.message.trim()) {
-      setErrorMessage("Please fill out all required fields.");
+      setErrorMessage(contactT("errors.required"));
       setStatus("error");
       return;
     }
 
     if (!isValidEmail(formData.email)) {
-      setErrorMessage("Please enter a valid email address.");
+      setErrorMessage(contactT("errors.email"));
       setStatus("error");
       return;
     }
 
     if (!isValidPhone(formData.phone)) {
-      setErrorMessage("Please enter a valid phone number.");
+      setErrorMessage(contactT("errors.phone"));
       setStatus("error");
       return;
     }
@@ -82,11 +81,11 @@ export function ContactSection() {
         setStatus("success");
         setFormData({ name: "", email: "", phone: "", message: "", botcheck: "" });
       } else {
-        throw new Error(result.message || "Failed to send message");
+        throw new Error(result.message || contactT("errors.sendFailed"));
       }
-    } catch (error) {
+    } catch {
       setStatus("error");
-      setErrorMessage("Something went wrong. Please try again or call us directly.");
+      setErrorMessage(contactT("errors.generic"));
     }
   };
 
@@ -94,15 +93,15 @@ export function ContactSection() {
     <section id="contact" className="py-24 bg-sky-50">
       <div className="container mx-auto px-4 md:px-8">
         <SectionHeading 
-          title="We Are Here For You" 
-          subtitle="Whether you have questions, want to schedule a visit, or just need to talk about options, our team is ready to help."
+          title={contactT("title")}
+          subtitle={contactT("subtitle")}
           centered={true}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div className="bg-navy-900 rounded-3xl p-8 md:p-12 text-white shadow-xl">
-            <h3 className="text-2xl font-bold mb-8 text-sky-100">Get in Touch</h3>
+            <h3 className="text-2xl font-bold mb-8 text-sky-100">{contactT("getInTouch")}</h3>
             
             <div className="space-y-8">
               <div className="flex items-start gap-4">
@@ -110,7 +109,7 @@ export function ContactSection() {
                   <MapPin className="h-6 w-6 text-sky-300" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-sky-100 mb-1">Visit Us</h4>
+                  <h4 className="font-semibold text-lg text-sky-100 mb-1">{contactT("visitUs")}</h4>
                   <p className="text-sky-100/70 leading-relaxed">{SITE_CONFIG.address}</p>
                 </div>
               </div>
@@ -120,7 +119,7 @@ export function ContactSection() {
                   <Phone className="h-6 w-6 text-sky-300" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-sky-100 mb-1">Call Us</h4>
+                  <h4 className="font-semibold text-lg text-sky-100 mb-1">{contactT("callUs")}</h4>
                   <p className="text-sky-100/70">{SITE_CONFIG.phone}</p>
                 </div>
               </div>
@@ -130,7 +129,7 @@ export function ContactSection() {
                   <Mail className="h-6 w-6 text-sky-300" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-sky-100 mb-1">Email Us</h4>
+                  <h4 className="font-semibold text-lg text-sky-100 mb-1">{contactT("emailUs")}</h4>
                   <p className="text-sky-100/70">{SITE_CONFIG.email}</p>
                 </div>
               </div>
@@ -140,28 +139,28 @@ export function ContactSection() {
                   <Clock className="h-6 w-6 text-sky-300" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg text-sky-100 mb-1">Working Hours</h4>
-                  <p className="text-sky-100/70">{SITE_CONFIG.workingHours}</p>
+                  <h4 className="font-semibold text-lg text-sky-100 mb-1">{contactT("workingHours")}</h4>
+                  <p className="text-sky-100/70">{t("site.workingHours")}</p>
                 </div>
               </div>
             </div>
             
             {/* Map Placeholder */}
             <div className="mt-12 h-48 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center">
-              <span className="text-sky-100/40 font-medium">Interactive Map Placeholder</span>
+              <span className="text-sky-100/40 font-medium">{contactT("mapPlaceholder")}</span>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
-            <h3 className="text-2xl font-bold mb-8 text-navy-800">Send us a Message</h3>
+            <h3 className="text-2xl font-bold mb-8 text-navy-800">{contactT("sendMessage")}</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Honeypot Field */}
               <input type="text" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" onChange={handleChange} value={formData.botcheck} />
               
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-navy-700 mb-2">Full Name *</label>
+                <label htmlFor="name" className="block text-sm font-medium text-navy-700 mb-2">{contactT("form.fullName")}</label>
                 <input 
                   type="text" 
                   id="name" 
@@ -170,13 +169,13 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
-                  placeholder="John Doe"
+                  placeholder={contactT("form.fullNamePlaceholder")}
                 />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-navy-700 mb-2">Email Address *</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-navy-700 mb-2">{contactT("form.email")}</label>
                   <input 
                     type="email" 
                     id="email" 
@@ -185,11 +184,11 @@ export function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
-                    placeholder="john@example.com"
+                    placeholder={contactT("form.emailPlaceholder")}
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-navy-700 mb-2">Phone Number *</label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-navy-700 mb-2">{contactT("form.phone")}</label>
                   <input 
                     type="tel" 
                     id="phone" 
@@ -198,13 +197,13 @@ export function ContactSection() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
-                    placeholder="+55 (11) 90000-0000"
+                    placeholder={contactT("form.phonePlaceholder")}
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-navy-700 mb-2">Your Message *</label>
+                <label htmlFor="message" className="block text-sm font-medium text-navy-700 mb-2">{contactT("form.message")}</label>
                 <textarea 
                   id="message" 
                   name="message" 
@@ -213,7 +212,7 @@ export function ContactSection() {
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white resize-none"
-                  placeholder="How can we help you?"
+                  placeholder={contactT("form.messagePlaceholder")}
                 ></textarea>
               </div>
 
@@ -225,7 +224,7 @@ export function ContactSection() {
 
               {status === "success" && (
                 <div className="p-4 bg-green-50 text-green-600 rounded-xl text-sm font-medium">
-                  Message sent successfully! We will get back to you soon.
+                  {contactT("form.success")}
                 </div>
               )}
 
@@ -234,10 +233,10 @@ export function ContactSection() {
                 disabled={status === "loading" || status === "success"}
                 className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-300"
               >
-                {status === "loading" ? "Sending..." : (
+                {status === "loading" ? contactT("form.sending") : (
                   <>
                     <Send className="w-5 h-5" />
-                    Send Message
+                    {contactT("form.send")}
                   </>
                 )}
               </button>

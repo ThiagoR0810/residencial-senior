@@ -1,8 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import { SITE_CONFIG } from "@/shared/config/siteConfig";
+import { useTranslations } from "next-intl";
 
 export function HeroSection() {
+  const t = useTranslations();
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Image Placeholder (Gradient) */}
@@ -24,10 +26,10 @@ export function HeroSection() {
           className="max-w-4xl mx-auto"
         >
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-            {SITE_CONFIG.tagline}
+            {t("site.tagline")}
           </h1>
           <p className="text-lg md:text-2xl text-sky-50 font-medium mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
-            {SITE_CONFIG.description}
+            {t("site.description")}
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -35,13 +37,13 @@ export function HeroSection() {
               href="#contact"
               className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-lg hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-400"
             >
-              Schedule a Visit
+              {t("hero.scheduleVisit")}
             </a>
             <a
               href="#services"
               className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full text-lg font-bold transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50"
             >
-              Explore Our Services
+              {t("hero.exploreServices")}
             </a>
           </div>
         </motion.div>
@@ -54,8 +56,8 @@ export function HeroSection() {
         transition={{ delay: 1, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:block"
       >
-        <a href="#about" aria-label="Scroll down to About section" className="flex flex-col items-center text-white/70 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded p-2">
-          <span className="text-sm tracking-widest uppercase mb-2">Scroll</span>
+        <a href="#about" aria-label={t("accessibility.scrollToAbout")} className="flex flex-col items-center text-white/70 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded p-2">
+          <span className="text-sm tracking-widest uppercase mb-2">{t("accessibility.scroll")}</span>
           <div className="w-0.5 h-12 bg-white/30 overflow-hidden relative">
             <motion.div 
               animate={{ y: [0, 48] }} 

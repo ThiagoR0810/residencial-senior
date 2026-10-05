@@ -1,10 +1,10 @@
 import type { NavigationLink } from "@/shared/types";
 
 export const NAVIGATION_LINKS: NavigationLink[] = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Facilities", href: "#facilities" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { key: "home", href: "#home" },
+  { key: "about", href: "#about" },
+  { key: "services", href: "#services" },
+  { key: "facilities", href: "#facilities" },
+  { key: "testimonials", href: "#testimonials" },
+  { key: "contact", href: "#contact" },
 ];

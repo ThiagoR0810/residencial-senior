@@ -7,7 +7,7 @@ export function TestimonialCard({ name, relationship, content, initials }: Testi
       <Quote className="absolute top-6 right-8 h-10 w-10 text-sky-200" />
       
       <p className="text-navy-700/80 italic leading-relaxed mb-8 relative z-10 text-lg">
-        "{content}"
+        &ldquo;{content}&rdquo;
       </p>
       
       <div className="flex items-center gap-4">

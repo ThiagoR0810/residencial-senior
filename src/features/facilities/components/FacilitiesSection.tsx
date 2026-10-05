@@ -1,21 +1,35 @@
 import { SectionHeading } from "@/shared/ui/SectionHeading";
+import { useTranslations } from "next-intl";
 import { FACILITIES_DATA } from "../constants";
 import { FacilityCard } from "./FacilityCard";
 
 export function FacilitiesSection() {
+  const t = useTranslations("facilities");
+  const accessibilityT = useTranslations("accessibility");
+
   return (
     <section id="facilities" className="py-24 bg-sky-50">
       <div className="container mx-auto px-4 md:px-8">
         <SectionHeading 
-          title="World-Class Facilities" 
-          subtitle="Designed with the perfect balance of medical safety, accessibility, and the comfort of home."
+          title={t("title")}
+          subtitle={t("subtitle")}
           centered={true}
         />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-          {FACILITIES_DATA.map((facility, index) => (
-            <FacilityCard key={index} {...facility} />
-          ))}
+          {FACILITIES_DATA.map((facility) => {
+            const title = t(`items.${facility.key}.title`);
+
+            return (
+            <FacilityCard
+              key={facility.key}
+              gradient={facility.gradient}
+              title={title}
+              description={t(`items.${facility.key}.description`)}
+              ariaLabel={accessibilityT("learnMoreAbout", { title })}
+            />
+            );
+          })}
         </div>
       </div>
     </section>

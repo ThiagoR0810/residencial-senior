@@ -1,4 +1,4 @@
 export interface NavigationLink {
-  label: string;
+  key: "home" | "about" | "services" | "facilities" | "testimonials" | "contact";
   href: string;
 }

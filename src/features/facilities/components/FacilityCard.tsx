@@ -1,6 +1,11 @@
-import type { FacilityItem } from "../types";
+interface FacilityCardProps {
+  title: string;
+  gradient: string;
+  description: string;
+  ariaLabel: string;
+}
 
-export function FacilityCard({ title, gradient, description }: FacilityItem) {
+export function FacilityCard({ title, gradient, description, ariaLabel }: FacilityCardProps) {
   return (
     <div className="group relative h-80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 focus-within:ring-4 focus-within:ring-blue-400">
       {/* Background Gradient (Image Placeholder) */}
@@ -20,7 +25,7 @@ export function FacilityCard({ title, gradient, description }: FacilityItem) {
       </div>
 
       {/* Accessibility Link to make card focusable if needed, or just standard div */}
-      <a href="#contact" className="absolute inset-0 focus-visible:outline-none" aria-label={`Learn more about our ${title}`}>
+      <a href="#contact" className="absolute inset-0 focus-visible:outline-none" aria-label={ariaLabel}>
         <span className="sr-only">{title}</span>
       </a>
     </div>

@@ -1,14 +1,16 @@
 import { SITE_CONFIG } from "@/shared/config/siteConfig";
+import { useTranslations } from "next-intl";
 
 export function WhatsAppFAB() {
-  const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(SITE_CONFIG.whatsappMessage)}`;
+  const t = useTranslations();
+  const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(t("site.whatsappMessage"))}`;
 
   return (
     <a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Contact us via WhatsApp"
+      aria-label={t("accessibility.contactViaWhatsApp")}
       className="fixed bottom-6 right-6 z-50 bg-whatsapp text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-400"
     >
       <div className="absolute inset-0 rounded-full bg-whatsapp animate-ping opacity-20 group-hover:opacity-40"></div>

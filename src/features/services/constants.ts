@@ -3,23 +3,19 @@ import type { ServiceItem } from "./types";
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
+    key: "care",
     icon: Clock,
-    title: "24/7 Care Assistance",
-    description: "Round-the-clock professional nursing and medical support, ensuring peace of mind at all times.",
   },
   {
+    key: "nutrition",
     icon: UtensilsCrossed,
-    title: "Specialized Nutrition",
-    description: "Personalized meal plans created by certified nutritionists, respecting individual dietary needs.",
   },
   {
+    key: "physiotherapy",
     icon: Activity,
-    title: "Physiotherapy",
-    description: "Rehabilitation and mobility programs with expert therapists in our fully equipped center.",
   },
   {
+    key: "recreation",
     icon: Palette,
-    title: "Recreational Activities",
-    description: "Art, music, gardening, and social programs that enrich daily life and cognitive health.",
   },
 ];
